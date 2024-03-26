@@ -19,11 +19,22 @@ public class InteractableObject : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && playerInRange && SelectionManager.Instance.onTarget)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && SelectionManager.Instance.onTarget && SelectionManager.Instance.selectedObject == gameObject)
         {
-            Debug.Log("Pegou Ae");
-            Destroy(gameObject);
 
+            //se o inv nao estiver cheio
+            if (!InventorySystem.Instance.CheckIfFull())
+            {
+                InventorySystem.Instance.AddToInventory(ItemName);
+
+                Destroy(gameObject);
+            }
+            //se tiver chei
+            else
+            {
+
+                Debug.Log("Ta chei o inventorio!");
+            }
 
         }
 

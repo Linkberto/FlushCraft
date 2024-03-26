@@ -204,7 +204,7 @@ public class FirstPersonController : MonoBehaviour
     {
         #region Camera
 
-        if(InventorySystem.Instance.isOpen == false) {
+        if(!InventorySystem.Instance.isOpen && !CraftingSystem.Instance.isOpen) {
             if (cameraCanMove)
             {
                 yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;

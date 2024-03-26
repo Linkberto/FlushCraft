@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8388455636873850698}
   - component: {fileID: -8399903465405565452}
   m_Layer: 5
-  m_Name: gravel_INV
+  m_Name: Gravel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
