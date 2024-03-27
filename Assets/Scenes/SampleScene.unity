@@ -866,7 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingScreenUI: {fileID: 1820837670}
   toolsScreenUI: {fileID: 1678673376}
-  inventroyItemList: []
+  inventoryItemList: []
   isOpen: 0
 --- !u!1 &293005688
 GameObject:
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 390784164}
   - component: {fileID: 390784163}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1866,7 +1866,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -33, y: 3, z: 82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3244,6 +3244,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: bobSpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: maxLookAngle
       value: 80
       objectReference: {fileID: 0}
@@ -4315,14 +4319,14 @@ RectTransform:
   m_GameObject: {fileID: 1736473104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11664506, y: 0.14287066, z: 0.14286569}
+  m_LocalScale: {x: 0.13821411, y: 0.1479283, z: 0.14792314}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 374026250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 175.3, y: -37.300003}
+  m_AnchoredPosition: {x: 192.3001, y: -37.852005}
   m_SizeDelta: {x: 1832.7936, y: 100.470276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736473106
@@ -4373,7 +4377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: -9.78
-  m_Text: 1 little stone [0]
+  m_Text: 3 Stone [0]
 --- !u!222 &1736473108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5491,14 +5495,14 @@ RectTransform:
   m_GameObject: {fileID: 1979264472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11664506, y: 0.14287066, z: 0.14286569}
+  m_LocalScale: {x: 0.13821411, y: 0.1479283, z: 0.14792314}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 374026250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 175.3, y: -6.1}
+  m_AnchoredPosition: {x: 192.3, y: -5.5484}
   m_SizeDelta: {x: 1832.7936, y: 100.470276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979264474
@@ -5549,7 +5553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: -9.78
-  m_Text: 3 small sticks [0]
+  m_Text: 3 Stick [0]
 --- !u!222 &1979264476
 CanvasRenderer:
   m_ObjectHideFlags: 0
