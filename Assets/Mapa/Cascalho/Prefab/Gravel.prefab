@@ -62,7 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78c1570ebe0a1e64a81b0f8074dc682d, type: 3}
       propertyPath: m_Name
-      value: cascalhoPrefab
+      value: Gravel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78c1570ebe0a1e64a81b0f8074dc682d, type: 3}
+      propertyPath: m_TagString
+      value: pickable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

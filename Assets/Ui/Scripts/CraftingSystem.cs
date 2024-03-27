@@ -97,24 +97,22 @@ public class CraftingSystem : MonoBehaviour
 
         StartCoroutine(calculate());
 
-        RefreshNeededItems();
+        
 
 
     }
 
     public IEnumerator calculate()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return 0; //sem delay
 
         InventorySystem.Instance.ReCalculateList();
-
+        RefreshNeededItems(); //add isso
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        RefreshNeededItems();
 
 
 
@@ -141,7 +139,7 @@ public class CraftingSystem : MonoBehaviour
             isOpen = false;
         }
     }
-    private void RefreshNeededItems()
+    public void RefreshNeededItems()
     {
 
         int stone_count = 0;

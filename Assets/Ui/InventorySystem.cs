@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    public GameObject ItemInfoUI;
 
     public static InventorySystem Instance { get; set; }
 
@@ -109,6 +110,11 @@ public class InventorySystem : MonoBehaviour
 
             itemList.Add(itemName);
 
+
+
+        ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
+
     }
     
 
@@ -176,6 +182,10 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
+
+        ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
+
     }
 
     public void ReCalculateList()

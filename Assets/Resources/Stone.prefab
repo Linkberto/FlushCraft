@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6404314050709115312}
   - component: {fileID: 3087347971993575146}
   - component: {fileID: 6738302512814459582}
+  - component: {fileID: 4959265359956591684}
   m_Layer: 5
   m_Name: Stone
   m_TagString: Untagged
@@ -101,3 +102,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4959265359956591684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376011700223630684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2dccce7f54d4c498ac356a015d76b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  thisName: Stone
+  thisDescription: A small stone, with its variety of colors and textures, can symbolize
+    stability and remind us of the natural beauty of the world. What story might
+    it carry?
+  thisFunctionality: 'It can be used for crafts.      '
