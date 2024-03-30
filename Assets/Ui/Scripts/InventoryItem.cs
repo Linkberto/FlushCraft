@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
-    // --- Is this item trashable --- //
+    // da pra jogar fora
     public bool isTrashable;
 
-    // --- Item Info UI --- //
+    // info ui
     private GameObject itemInfoUI;
 
     private Text itemInfoUI_itemName;
@@ -19,6 +19,12 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public string thisName, thisDescription, thisFunctionality;
 
+    // equipar
+    public bool isEquippable;
+    private GameObject itemPendingEquipping;
+    public bool isInsideQuickSlot;
+
+    public bool isSelected;
    
 
 
@@ -30,7 +36,24 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<Text>();
     }
 
-    // Triggered when the mouse enters into the area of the item that has this script.
+
+
+    void Update()
+    {
+        if (isSelected)
+        {
+
+            gameObject.GetComponent<DragDrop>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<DragDrop>().enabled = true;
+        }
+
+
+    }
+
+    // trigger quando o mouse entra na area que tem o script
     public void OnPointerEnter(PointerEventData eventData)
     {
         itemInfoUI.SetActive(true);
@@ -39,12 +62,32 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         itemInfoUI_itemFunctionality.text = thisFunctionality;
     }
 
-    // Triggered when the mouse exits the area of the item that has this script.
+    // Trigger quando o mouse sai da area que tem o script
     public void OnPointerExit(PointerEventData eventData)
     {
         itemInfoUI.SetActive(false);
     }
 
+    //trigger quando o mouse clica sobre um item que tem esse script
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        //botao direito clicado
+        if(eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (isEquippable && isInsideQuickSlot == false && EquipSystem.Instance.CheckIfFull() == false)
+            {
+                EquipSystem.Instance.AddToQuickSlots(gameObject);
+                isInsideQuickSlot = true;
+
+
+
+            }
+
+        }
+
+        
+    }
    
 
    
