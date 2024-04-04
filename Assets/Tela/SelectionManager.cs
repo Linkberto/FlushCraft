@@ -26,7 +26,8 @@ public class SelectionManager : MonoBehaviour
 
     public bool handIsVisible;
 
-
+    public GameObject selectedTree;
+    public GameObject chopHolder;
 
     private void Start()
     {
@@ -54,6 +55,35 @@ public class SelectionManager : MonoBehaviour
             var selectionTransform = hit.transform;
 
             InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
+
+            ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
+
+            if (choppableTree && choppableTree.playerInRange)
+            {
+                choppableTree.canBeChopped = true;
+                selectedTree = choppableTree.gameObject;
+                chopHolder.gameObject.SetActive(true);
+
+
+            }
+            else
+            {
+                if(selectedTree !=null)
+                {
+                    selectedTree.gameObject.GetComponent<ChoppableTree>().canBeChopped = false;
+                    selectedTree = null;
+                    chopHolder.gameObject.SetActive(false);
+                }
+
+
+
+            }
+
+
+
+
+
+
 
             if (interactable && interactable.playerInRange)
             {
