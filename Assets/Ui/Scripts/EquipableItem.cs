@@ -19,21 +19,13 @@ public class EquipableItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && 
-            InventorySystem.Instance.isOpen == false 
+        if (Input.GetMouseButtonDown(0) &&
+            InventorySystem.Instance.isOpen == false
             && CraftingSystem.Instance.isOpen == false &&
-            SelectionManager.Instance.handIsVisible == false) // botao esquerdo
+            SelectionManager.Instance.handIsVisible == false ) // botao esquerdo
         {
-            GameObject selectedTree = SelectionManager.Instance.selectedTree;
-
-            if (selectedTree != null)
-            {
-                selectedTree.GetComponent<ChoppableTree>().GetHit();
-            }
-
-
-
             animator.SetTrigger("hit");
         }
     }
+
 }
