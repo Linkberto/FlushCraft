@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.021137584
+      value: 0.031974822
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.021137584
+      value: 0.03197482
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.021137584
+      value: 0.03197482
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 902.15
+      value: -14.130937
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 246.734
+      value: 4.804181
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 859.79
+      value: -3.6093502
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3adc0b15105fbcf46a1ca4d6699fa39d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -127,7 +127,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 95.2, y: 152, z: 69.1}
+  m_Size: {x: 58.4, y: 128.6, z: 69.1}
   m_Center: {x: -3.9170644, y: -29.434774, z: 31}
 --- !u!114 &2919957701554795285
 MonoBehaviour:
