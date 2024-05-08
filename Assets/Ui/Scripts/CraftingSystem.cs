@@ -18,16 +18,19 @@ public class CraftingSystem : MonoBehaviour
 
     //botoes de craftar
     Button craftAxeBTN;
+    Button craftPickaxeBTN;
 
 
     //requerimentos texto
     Text AxeReq1, AxeReq2;
+    Text PickaxeReq1, PickaxeReq2;
 
     public bool isOpen;
 
     //todos os blueprint
     public Blueprint AxeBLP = new Blueprint("Axe", 2, "Stick", 3, "Stone", 3);
 
+    public Blueprint PickaxeBLP = new Blueprint("Pickaxe", 2, "Petrified Wood Log", 2, "Stone", 3);
 
 
 
@@ -60,6 +63,13 @@ public class CraftingSystem : MonoBehaviour
 
         craftAxeBTN = toolsScreenUI.transform.Find("Axe").transform.Find("Button").GetComponent<Button>();
         craftAxeBTN.onClick.AddListener(delegate { CraftAnyItem(AxeBLP); });
+
+        //picareta
+        PickaxeReq1 = toolsScreenUI.transform.Find("Pickaxe").transform.Find("req1").GetComponent<Text>();
+        PickaxeReq2 = toolsScreenUI.transform.Find("Pickaxe").transform.Find("req2").GetComponent<Text>();
+
+        craftPickaxeBTN = toolsScreenUI.transform.Find("Pickaxe").transform.Find("Button").GetComponent<Button>();
+        craftPickaxeBTN.onClick.AddListener(delegate { CraftAnyItem(PickaxeBLP); });
 
 
     }
@@ -152,6 +162,9 @@ public class CraftingSystem : MonoBehaviour
 
         int stone_count = 0;
         int stick_count = 0;
+        int pwl_count = 0;
+
+        //PWL = petrifield wooden log
 
         inventoryItemList = InventorySystem.Instance.itemList;
 
@@ -166,6 +179,10 @@ public class CraftingSystem : MonoBehaviour
                     break;
                 case "Stick":
                     stick_count += 1;
+                    break;
+
+                case "Petrified Wood Log":
+                    pwl_count += 1;
                     break;
 
             }
@@ -185,6 +202,23 @@ public class CraftingSystem : MonoBehaviour
             {
 
                 craftAxeBTN.gameObject.SetActive(false);
+
+            }
+
+            //-------Pickaxe--------//
+            PickaxeReq1.text = "3 Stone [" + stone_count + "]";
+            PickaxeReq2.text = "2 Petrified Wood [" + pwl_count + "]";
+
+            if (stone_count >= 3 && pwl_count >= 2)
+
+            {
+                craftPickaxeBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftPickaxeBTN.gameObject.SetActive(false);
 
             }
 
