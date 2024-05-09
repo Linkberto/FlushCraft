@@ -42,4 +42,15 @@ public class EquipableItem : MonoBehaviour
         }
     }
 
+    public void GetHitPick()
+    {
+        GameObject selectedStone = SelectionManager.Instance.selectedStone;
+
+        if (selectedStone != null)
+        {
+            selectedStone.GetComponent<BreakableStone>().GetHitPick();
+        }
+    }
+
+
 }

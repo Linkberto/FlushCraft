@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 868cb1bfebeefe4448625126c6bc637a, type: 3}
+      propertyPath: m_TagString
+      value: Pickaxe
+      objectReference: {fileID: 0}
     - target: {fileID: 8636607088204673263, guid: 868cb1bfebeefe4448625126c6bc637a, type: 3}
       propertyPath: m_Layer
       value: 7

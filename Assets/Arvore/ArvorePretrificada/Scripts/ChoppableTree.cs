@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(BoxCollider))]
 public class ChoppableTree : MonoBehaviour
 {
 
@@ -55,7 +55,9 @@ public class ChoppableTree : MonoBehaviour
         }
 
     }
-    
+
+
+
 
     void TreeIsDead()
     {

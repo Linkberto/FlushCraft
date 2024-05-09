@@ -26,8 +26,13 @@ public class SelectionManager : MonoBehaviour
 
     public bool handIsVisible;
 
+    //arvore
     public GameObject selectedTree;
     public GameObject chopHolder;
+
+    //pedra
+    public GameObject selectedStone;
+    public GameObject pickHolder;
 
     private void Start()
     {
@@ -37,7 +42,7 @@ public class SelectionManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
         }
@@ -48,6 +53,7 @@ public class SelectionManager : MonoBehaviour
     }
     void Update()
     {
+        //arvore
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -66,21 +72,13 @@ public class SelectionManager : MonoBehaviour
             }
             else
             {
-                if(selectedTree != null)
+                if (selectedTree != null)
                 {
                     selectedTree.gameObject.GetComponent<ChoppableTree>().canBeChopped = false;
                     selectedTree = null;
                     chopHolder.gameObject.SetActive(false);
                 }
             }
-
-
-
-
-
-
-
-
 
             if (interactable && interactable.playerInRange)
             {
@@ -100,7 +98,7 @@ public class SelectionManager : MonoBehaviour
                 else
                 {
                     handIcon.gameObject.SetActive(false);
-                    centerDotImage.gameObject.SetActive(true) ;
+                    centerDotImage.gameObject.SetActive(true);
 
                     handIsVisible = false;
 
@@ -119,16 +117,80 @@ public class SelectionManager : MonoBehaviour
             }
 
         }
+        
+        //pedra
+        if (Physics.Raycast(ray, out hit))
+        {
+            var selectionTransform = hit.transform;
+
+            InteractableObject interactableStone = selectionTransform.GetComponent<InteractableObject>();
+
+            BreakableStone breakableStone = selectionTransform.GetComponent<BreakableStone>();
+
+            if (breakableStone && breakableStone.playerInRange)
+            {
+                breakableStone.canBeBroken = true;
+                selectedStone = breakableStone.gameObject;
+                pickHolder.gameObject.SetActive(true);
+            }
+            else
+            {
+                if (selectedStone != null)
+                {
+                    selectedStone.gameObject.GetComponent<BreakableStone>().canBeBroken = false;
+                    selectedStone = null;
+                    pickHolder.gameObject.SetActive(false);
+                }
+            }
+            if (interactableStone && interactableStone.playerInRange)
+            {
+
+                onTarget = true;
+                selectedObject = interactableStone.gameObject;
+                interaction_text.text = interactableStone.GetItemName();
+                interaction_Info_UI.SetActive(true);
+
+                if (interactableStone.CompareTag("pickable"))
+                {
+                    centerDotImage.gameObject.SetActive(false);
+                    handIcon.gameObject.SetActive(true);
+                    handIsVisible = true;
+
+                }
+                else
+                {
+                    handIcon.gameObject.SetActive(false);
+                    centerDotImage.gameObject.SetActive(true);
+
+                    handIsVisible = false;
+
+                }
+
+            }
+            else
+            {
+
+                onTarget = false;
+                interaction_Info_UI.SetActive(false);
+                handIcon.gameObject.SetActive(false);
+                centerDotImage.gameObject.SetActive(true);
+
+                handIsVisible = false;
+            }
+        }
         else
         {
 
-            onTarget= false;
-            interaction_Info_UI.SetActive(false) ;
+            onTarget = false;
+            interaction_Info_UI.SetActive(false);
             handIcon.gameObject.SetActive(false);
             centerDotImage.gameObject.SetActive(true);
 
             handIsVisible = false;
         }
+        
+       
+
     }
     public void DisableSelection()
     {

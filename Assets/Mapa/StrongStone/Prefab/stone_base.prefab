@@ -1,98 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &561551845032275136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4802727601303985668}
-  - component: {fileID: 7775430255265954319}
-  - component: {fileID: 8293485472855621953}
-  - component: {fileID: 1430985981105869213}
-  m_Layer: 0
-  m_Name: stone_base
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4802727601303985668
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561551845032275136}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3489051359966832251}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7775430255265954319
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561551845032275136}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.3486676, y: 1.5818386, z: 0.71266663}
-  m_Center: {x: -0.013145887, y: -0.01589129, z: 0.14366663}
---- !u!114 &8293485472855621953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561551845032275136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28eac28360b6e8c44b290b4bdfea783e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  canBeBroken: 0
-  stoneMaxHealth: 0
-  stoneHealth: 0
-  animator: {fileID: 0}
---- !u!65 &1430985981105869213
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561551845032275136}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.83, y: 2.83, z: 1.29}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4026535570704941456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,35 +10,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.9064248
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.216783
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.763354
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.624146
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_LocalRotation.y
@@ -153,39 +60,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       propertyPath: m_Name
       value: strongstone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4802727601303985668}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3398454054559949140}
+      addedObject: {fileID: 3285768718317430622}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 838223716009270199}
+      addedObject: {fileID: 1192395089679540878}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3539473310212336079}
+      addedObject: {fileID: 6778718117715429629}
   m_SourcePrefab: {fileID: 100100000, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
---- !u!4 &3489051359966832251 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
-  m_PrefabInstance: {fileID: 4026535570704941456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4260485604105190593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
   m_PrefabInstance: {fileID: 4026535570704941456}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3398454054559949140
-BoxCollider:
+--- !u!114 &3285768718317430622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260485604105190593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1388eaee6c2daca45893d659d4bb1302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  ItemName: Strong Stone
+--- !u!64 &1192395089679540878
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -202,24 +119,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.52, y: 1.48, z: 0.8195125}
-  m_Center: {x: 0, y: -8.3822677e-16, z: 0.17701125}
---- !u!114 &838223716009270199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4260485604105190593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1388eaee6c2daca45893d659d4bb1302, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  ItemName: Strong Stone
---- !u!65 &3539473310212336079
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8134003407345992923, guid: 7ca8b700dba537b49b53ac7b7fa03129, type: 3}
+--- !u!65 &6778718117715429629
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,5 +142,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.25, y: 3.22, z: 0.94274867}
-  m_Center: {x: 0, y: 6.0995046e-15, z: 0.2146072}
+  m_Size: {x: 3.6971064, y: 4.066133, z: 0.9427486}
+  m_Center: {x: 0.10468541, y: 0.05182708, z: 0.21460778}

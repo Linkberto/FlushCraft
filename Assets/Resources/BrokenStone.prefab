@@ -90,6 +90,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sps
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f564660a271fc248868a57cd562c90e, type: 3}
+      propertyPath: m_TagString
+      value: pickable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -319,6 +323,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1f564660a271fc248868a57cd562c90e, type: 3}
       propertyPath: m_Name
       value: sps
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f564660a271fc248868a57cd562c90e, type: 3}
+      propertyPath: m_TagString
+      value: pickable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
