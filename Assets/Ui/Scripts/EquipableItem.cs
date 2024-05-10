@@ -24,7 +24,7 @@ public class EquipableItem : MonoBehaviour
             && CraftingSystem.Instance.isOpen == false &&
             SelectionManager.Instance.handIsVisible == false ) // botao esquerdo
         {
-            
+
 
 
 
@@ -40,17 +40,15 @@ public class EquipableItem : MonoBehaviour
         {
             selectedTree.GetComponent<ChoppableTree>().GetHit();
         }
-    }
-
-    public void GetHitPick()
-    {
         GameObject selectedStone = SelectionManager.Instance.selectedStone;
 
         if (selectedStone != null)
         {
-            selectedStone.GetComponent<BreakableStone>().GetHitPick();
+            selectedStone.GetComponent<BreakableStone>().GetHit();
         }
     }
+
+  
 
 
 }

@@ -60,10 +60,19 @@ public class SelectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
+            //arvore
+
             InteractableObject interactable = selectionTransform.GetComponent<InteractableObject>();
 
             ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
 
+            //pedra
+            InteractableObject interactableStone = selectionTransform.GetComponent<InteractableObject>();
+
+            BreakableStone breakableStone = selectionTransform.GetComponent<BreakableStone>();
+
+
+            //arvore
             if (choppableTree && choppableTree.playerInRange)
             {
                 choppableTree.canBeChopped = true;
@@ -79,6 +88,26 @@ public class SelectionManager : MonoBehaviour
                     chopHolder.gameObject.SetActive(false);
                 }
             }
+
+            //pedra
+
+            if (breakableStone && breakableStone.playerInRange)
+            {
+                breakableStone.canBeBroken = true;
+                selectedStone = breakableStone.gameObject;
+                pickHolder.gameObject.SetActive(true);
+            }
+            else
+            {
+                if (selectedStone != null)
+                {
+                    selectedStone.gameObject.GetComponent<BreakableStone>().canBeBroken = false;
+                    selectedStone = null;
+                    pickHolder.gameObject.SetActive(false);
+                }
+            }
+
+            //arvore
 
             if (interactable && interactable.playerInRange)
             {
@@ -114,33 +143,6 @@ public class SelectionManager : MonoBehaviour
                 centerDotImage.gameObject.SetActive(true);
 
                 handIsVisible = false;
-            }
-
-        }
-        
-        //pedra
-        if (Physics.Raycast(ray, out hit))
-        {
-            var selectionTransform = hit.transform;
-
-            InteractableObject interactableStone = selectionTransform.GetComponent<InteractableObject>();
-
-            BreakableStone breakableStone = selectionTransform.GetComponent<BreakableStone>();
-
-            if (breakableStone && breakableStone.playerInRange)
-            {
-                breakableStone.canBeBroken = true;
-                selectedStone = breakableStone.gameObject;
-                pickHolder.gameObject.SetActive(true);
-            }
-            else
-            {
-                if (selectedStone != null)
-                {
-                    selectedStone.gameObject.GetComponent<BreakableStone>().canBeBroken = false;
-                    selectedStone = null;
-                    pickHolder.gameObject.SetActive(false);
-                }
             }
             if (interactableStone && interactableStone.playerInRange)
             {
@@ -188,10 +190,11 @@ public class SelectionManager : MonoBehaviour
 
             handIsVisible = false;
         }
-        
-       
 
     }
+        
+        
+   
     public void DisableSelection()
     {
         handIcon.enabled = false;

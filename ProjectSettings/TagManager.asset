@@ -9,6 +9,7 @@ TagManager:
   - pickable
   - QuickSlot
   - Pickaxe
+  - Axe
   layers:
   - Default
   - TransparentFX

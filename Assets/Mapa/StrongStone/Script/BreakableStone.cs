@@ -37,9 +37,9 @@ public class BreakableStone : MonoBehaviour
 
 
   
-    public void GetHitPick()
+    public void GetHit()
     {
-        // animator.SetTrigger("shake");
+        animator.SetTrigger("shake");
 
         stoneHealth -= 2;
 
