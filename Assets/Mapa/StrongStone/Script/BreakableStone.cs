@@ -73,5 +73,5 @@ public class BreakableStone : MonoBehaviour
             GlobalState.Instance.resourceMaxHealth = stoneMaxHealth;
         }
     }
-
+    
 }

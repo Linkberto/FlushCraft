@@ -19,11 +19,13 @@ public class CraftingSystem : MonoBehaviour
     //botoes de craftar
     Button craftAxeBTN;
     Button craftPickaxeBTN;
+    Button craftHammerBTN;
 
 
     //requerimentos texto
     Text AxeReq1, AxeReq2;
     Text PickaxeReq1, PickaxeReq2;
+    Text HammerReq1, HammerReq2;
 
     public bool isOpen;
 
@@ -31,6 +33,8 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint AxeBLP = new Blueprint("Axe", 2, "Stick", 3, "Stone", 3);
 
     public Blueprint PickaxeBLP = new Blueprint("Pickaxe", 2, "Petrified Wood Log", 2, "Stone", 3);
+
+    public Blueprint HammerBLP = new Blueprint("Hammer", 2, "Petrified Wood Log", 4, "Strong Stone", 6);
 
 
 
@@ -70,6 +74,13 @@ public class CraftingSystem : MonoBehaviour
 
         craftPickaxeBTN = toolsScreenUI.transform.Find("Pickaxe").transform.Find("Button").GetComponent<Button>();
         craftPickaxeBTN.onClick.AddListener(delegate { CraftAnyItem(PickaxeBLP); });
+
+        //hammer
+        HammerReq1 = toolsScreenUI.transform.Find("Hammer").transform.Find("req1").GetComponent<Text>();
+        HammerReq2 = toolsScreenUI.transform.Find("Hammer").transform.Find("req2").GetComponent<Text>();
+
+        craftHammerBTN = toolsScreenUI.transform.Find("Hammer").transform.Find("Button").GetComponent<Button>();
+        craftHammerBTN.onClick.AddListener(delegate { CraftAnyItem(HammerBLP); });
 
 
     }
@@ -163,6 +174,7 @@ public class CraftingSystem : MonoBehaviour
         int stone_count = 0;
         int stick_count = 0;
         int pwl_count = 0;
+        int strongstone_count = 0;
 
         //PWL = petrifield wooden log
 
@@ -183,6 +195,10 @@ public class CraftingSystem : MonoBehaviour
 
                 case "Petrified Wood Log":
                     pwl_count += 1;
+                    break;
+
+                case "Strong Stone":
+                    strongstone_count += 1;
                     break;
 
             }
@@ -219,6 +235,22 @@ public class CraftingSystem : MonoBehaviour
             {
 
                 craftPickaxeBTN.gameObject.SetActive(false);
+
+            }
+            //-------Hammer--------//
+            HammerReq1.text = "6 Strong Stone [" + strongstone_count + "]";
+            HammerReq2.text = "4 Petrified Wood [" + pwl_count + "]";
+
+            if (strongstone_count >= 6 && pwl_count >= 4)
+
+            {
+                craftHammerBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftHammerBTN.gameObject.SetActive(false);
 
             }
 
