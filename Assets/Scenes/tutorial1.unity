@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e758b4f35a0b1145b1b35d889b1109d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeDaFase: Jogo1
+  nomeDaFase: cutscene1
   painelMenu: {fileID: 1378626907}
 --- !u!1 &1070509221
 GameObject:

@@ -116,10 +116,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTrashable: 1
   thisName: Pickaxe
-  thisDescription: A stone-headed axe with a wooden handle, a prehistoric tool, was
-    used for cutting wood and hunting by ancient peoples, combining a sharp stone
-    blade with a comfortable wooden grip.
-  thisFunctionality: 'Used to break petrified trees.     '
+  thisDescription: A stone pickaxe with a rudimentary wooden handle, an ancient tool
+    from prehistoric times, was used by our ancestors for breaking rocks and digging
+    tunnels.
+  thisFunctionality: 'Used to break strong stones.    '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

@@ -116,10 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTrashable: 1
   thisName: Strong Stone
-  thisDescription: A stone-headed axe with a wooden handle, a prehistoric tool, was
-    used for cutting wood and hunting by ancient peoples, combining a sharp stone
-    blade with a comfortable wooden grip.
-  thisFunctionality: 'Used to break petrified trees.     '
+  thisDescription: What did she take to get like that?
+  thisFunctionality: 'It can be used for crafts. '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

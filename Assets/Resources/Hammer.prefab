@@ -116,10 +116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTrashable: 1
   thisName: Hammer
-  thisDescription: A stone-headed axe with a wooden handle, a prehistoric tool, was
-    used for cutting wood and hunting by ancient peoples, combining a sharp stone
-    blade with a comfortable wooden grip.
-  thisFunctionality: 'Used to break petrified trees.     '
+  thisDescription: A  hammer with a wooden handle, an ancient tool, was used for
+    shaping rocks by early civilizations, combining durability with simplicity.
+  thisFunctionality: 'Legendary item. '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

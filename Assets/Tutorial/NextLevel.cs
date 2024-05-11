@@ -18,7 +18,7 @@ public class NextLevel : MonoBehaviour
     {
         fade.FadeIn();
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("Jogo1");
+        SceneManager.LoadScene("cutscene1");
     }
 
 
