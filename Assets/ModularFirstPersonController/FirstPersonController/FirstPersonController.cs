@@ -440,19 +440,7 @@ public class FirstPersonController : MonoBehaviour
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
             }
 
-            if(lastPosition != gameObject.transform.position)
-            {
-                isMoving = true;
-                SoundManager.Instance.PlaySound(SoundManager.Instance.grassWalkSound);
-
-
-            }
-            else
-            {
-                isMoving = false;
-
-                SoundManager.Instance.grassWalkSound.Stop();
-            }
+           
         }
         lastPosition = gameObject.transform.position;
 
@@ -475,6 +463,22 @@ public class FirstPersonController : MonoBehaviour
         {
             isGrounded = false;
         }
+
+        if (lastPosition != gameObject.transform.position)
+        {
+            isMoving = true;
+            
+
+            SoundManager.Instance.PlaySound(SoundManager.Instance.grassWalkSound);
+
+
+        }
+        else
+        {
+            isMoving = false;
+
+            SoundManager.Instance.grassWalkSound.Stop();
+        }
     }
 
     private void Jump()
@@ -484,6 +488,7 @@ public class FirstPersonController : MonoBehaviour
         {
             rb.AddForce(0f, jumpPower, 0f, ForceMode.Impulse);
             isGrounded = false;
+
         }
 
         // When crouched and using toggle system, will uncrouch for a jump

@@ -34,6 +34,10 @@ public class SelectionManager : MonoBehaviour
     public GameObject selectedStone;
     public GameObject pickHolder;
 
+    //lixo
+    public GameObject selectedTrash;
+    public GameObject hammerHolder;
+
     private void Start()
     {
         onTarget = false;
@@ -71,6 +75,11 @@ public class SelectionManager : MonoBehaviour
 
             BreakableStone breakableStone = selectionTransform.GetComponent<BreakableStone>();
 
+            //lixo
+            InteractableObject interactableTrash = selectionTransform.GetComponent<InteractableObject>();
+
+            BreakableLixo breakableLixo = selectionTransform.GetComponent<BreakableLixo>();
+
 
             //arvore
             if (choppableTree && choppableTree.playerInRange)
@@ -104,6 +113,24 @@ public class SelectionManager : MonoBehaviour
                     selectedStone.gameObject.GetComponent<BreakableStone>().canBeBroken = false;
                     selectedStone = null;
                     pickHolder.gameObject.SetActive(false);
+                }
+            }
+
+            //lixo
+
+            if (breakableLixo && breakableLixo.playerInRange)
+            {
+                breakableLixo.canBeBroken = true;
+                selectedTrash = breakableLixo.gameObject;
+                hammerHolder.gameObject.SetActive(true);
+            }
+            else
+            {
+                if (selectedTrash != null)
+                {
+                    selectedTrash.gameObject.GetComponent<BreakableLixo>().canBeBroken = false;
+                    selectedTrash = null;
+                    hammerHolder.gameObject.SetActive(false);
                 }
             }
 

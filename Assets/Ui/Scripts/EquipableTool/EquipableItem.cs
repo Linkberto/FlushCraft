@@ -40,12 +40,7 @@ public class EquipableItem : MonoBehaviour
         {
             selectedTree.GetComponent<ChoppableTree>().GetHit();
         }
-        GameObject selectedStone = SelectionManager.Instance.selectedStone;
-
-        if (selectedStone != null)
-        {
-            selectedStone.GetComponent<BreakableStone>().GetHit();
-        }
+       
     }
 
   

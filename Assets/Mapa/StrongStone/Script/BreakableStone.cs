@@ -37,7 +37,7 @@ public class BreakableStone : MonoBehaviour
 
 
   
-    public void GetHit()
+    public void GetHitPick()
     {
         animator.SetTrigger("shake");
 
@@ -61,7 +61,7 @@ public class BreakableStone : MonoBehaviour
         SelectionManager.Instance.selectedStone = null;
         SelectionManager.Instance.pickHolder.gameObject.SetActive(false);
 
-        GameObject brokenTree = Instantiate(Resources.Load<GameObject>("BrokenStone"),
+        GameObject brokenStone = Instantiate(Resources.Load<GameObject>("BrokenStone"),
           new Vector3(stonePosition.x, stonePosition.y + 1, stonePosition.z), Quaternion.Euler(0, 0, 0));
     }
 
