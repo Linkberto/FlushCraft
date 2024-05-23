@@ -102,6 +102,7 @@ public class SelectionManager : MonoBehaviour
 
             if (breakableStone && breakableStone.playerInRange)
             {
+                Debug.Log("range");
                 breakableStone.canBeBroken = true;
                 selectedStone = breakableStone.gameObject;
                 pickHolder.gameObject.SetActive(true);
@@ -110,6 +111,7 @@ public class SelectionManager : MonoBehaviour
             {
                 if (selectedStone != null)
                 {
+                    Debug.Log("selected");
                     selectedStone.gameObject.GetComponent<BreakableStone>().canBeBroken = false;
                     selectedStone = null;
                     pickHolder.gameObject.SetActive(false);
@@ -120,6 +122,7 @@ public class SelectionManager : MonoBehaviour
 
             if (breakableLixo && breakableLixo.playerInRange)
             {
+                Debug.Log("range");
                 breakableLixo.canBeBroken = true;
                 selectedTrash = breakableLixo.gameObject;
                 hammerHolder.gameObject.SetActive(true);
@@ -128,6 +131,7 @@ public class SelectionManager : MonoBehaviour
             {
                 if (selectedTrash != null)
                 {
+                    Debug.Log("selected");
                     selectedTrash.gameObject.GetComponent<BreakableLixo>().canBeBroken = false;
                     selectedTrash = null;
                     hammerHolder.gameObject.SetActive(false);

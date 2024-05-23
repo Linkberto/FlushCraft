@@ -31,6 +31,7 @@ public class EquipablePickaxe : MonoBehaviour
 
     public void GetHitPick()
     {
+        Debug.Log("equipablepi");
        
         GameObject selectedStone = SelectionManager.Instance.selectedStone;
 

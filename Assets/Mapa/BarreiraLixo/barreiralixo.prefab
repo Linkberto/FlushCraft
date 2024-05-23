@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 6280887093077823169}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0.281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,8 +133,6 @@ MonoBehaviour:
   canBeBroken: 0
   trashMaxHealth: 30
   trashHealth: 0
-  aguaUm: {fileID: 0}
-  aguaDois: {fileID: 0}
   animator: {fileID: 0}
 --- !u!65 &2410763786957110901
 BoxCollider:
@@ -155,7 +153,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.066707, y: 2.699465, z: 2.0791478}
+  m_Size: {x: 1.88, y: 2.699465, z: 1.53}
   m_Center: {x: -0.006631067, y: 0.083253525, z: 0.039573804}
 --- !u!65 &6908693757353861755
 BoxCollider:
@@ -176,7 +174,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.066707, y: 2.839108, z: 2.56}
+  m_Size: {x: 1.8, y: 2.43, z: 2.05}
   m_Center: {x: 0.000003814198, y: 0.09270957, z: 0.04074885}
 --- !u!1001 &4263583816081200418
 PrefabInstance:
@@ -192,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.0823097
+      value: 2.08231
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       propertyPath: m_LocalScale.z
@@ -200,15 +198,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6013184
+      value: 70.769745
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.59906
+      value: 2.3150635
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.294495
+      value: 448.98734
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       propertyPath: m_LocalRotation.w
@@ -258,6 +256,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 805632561566141538}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6948050592728396502}
   m_SourcePrefab: {fileID: 100100000, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}
 --- !u!1 &4029071530659080307 stripped
 GameObject:
@@ -283,7 +284,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.066707, y: 2.699465, z: 2.079148}
+  m_Size: {x: 1.94, y: 2.5, z: 1.87}
   m_Center: {x: -0.006631067, y: 0.08325353, z: 0.0395738}
 --- !u!114 &805632561566141538
 MonoBehaviour:
@@ -299,6 +300,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   ItemName: Trash Barrier
+--- !u!65 &6948050592728396502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029071530659080307}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8, y: 2.43, z: 2.07}
+  m_Center: {x: 0.000003814198, y: 0.09270957, z: 0.31}
 --- !u!4 &4369040953409974985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b4097ddb2962c0f448607e93fa8e9a65, type: 3}

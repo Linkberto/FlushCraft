@@ -24,19 +24,19 @@ public class EquipableHammer : MonoBehaviour
 
 
 
-
-            animator.SetTrigger("hithammer");
+            Debug.Log("animacao");
+            animator.SetTrigger("hithit");
         }
     }
 
-    public void GetHitHammer()
+    public void GetHitH()
     {
-
-        GameObject selectedTrash = SelectionManager.Instance.selectedStone;
+        Debug.Log("eqphammer");
+        GameObject selectedTrash = SelectionManager.Instance.selectedTrash;
 
         if (selectedTrash != null)
         {
-            selectedTrash.GetComponent<BreakableLixo>().GetHitHammer();
+            selectedTrash.GetComponent<BreakableLixo>().GetHitH();
         }
     }
 
