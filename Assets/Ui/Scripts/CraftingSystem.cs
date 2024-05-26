@@ -7,6 +7,7 @@ public class CraftingSystem : MonoBehaviour
 {
     public GameObject craftingScreenUI;
     public GameObject toolsScreenUI;
+    public GameObject toolsScreenUI2;
 
 
     public List<string> inventoryItemList = new List<string>();
@@ -15,17 +16,24 @@ public class CraftingSystem : MonoBehaviour
     //categorias de botoes
 
     Button toolsBTN;
+    Button toolsBTN2;
 
     //botoes de craftar
     Button craftAxeBTN;
     Button craftPickaxeBTN;
     Button craftHammerBTN;
+    Button craftGradeBTN;
+    Button craftLinhaBTN;
+    Button craftPeneiraBTN;
 
 
     //requerimentos texto
     Text AxeReq1, AxeReq2;
     Text PickaxeReq1, PickaxeReq2;
     Text HammerReq1, HammerReq2;
+    Text LinhaReq1, LinhaReq2;
+    Text GradeReq1, GradeReq2;
+    Text PeneiraReq1, PeneiraReq2;
 
     public bool isOpen;
 
@@ -35,6 +43,13 @@ public class CraftingSystem : MonoBehaviour
     public Blueprint PickaxeBLP = new Blueprint("Pickaxe", 2, "Petrified Wood Log", 2, "Stone", 3);
 
     public Blueprint HammerBLP = new Blueprint("Hammer", 2, "Petrified Wood Log", 4, "Strong Stone", 6);
+
+    public Blueprint LinhaBLP = new Blueprint("Thread Spool", 2, "Cotton", 6, "Stick", 1);
+
+    public Blueprint GradeBLP = new Blueprint("Bamboo Grid", 2, "Bamboos", 5, "Thread Spool", 1);
+
+    public Blueprint PeneiraBLP = new Blueprint("Bamboo Sieve", 2, "Bamboo Grid", 1, "Thread Spool", 1);
+
 
 
 
@@ -57,7 +72,9 @@ public class CraftingSystem : MonoBehaviour
 
         isOpen = false;
 
-        toolsBTN = craftingScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
+        toolsBTN = craftingScreenUI.transform.Find("BasicToolsButton").GetComponent<Button>();
+
+
 
         toolsBTN.onClick.AddListener(delegate { OpenToolsCategory(); });
 
@@ -83,12 +100,55 @@ public class CraftingSystem : MonoBehaviour
         craftHammerBTN.onClick.AddListener(delegate { CraftAnyItem(HammerBLP); });
 
 
+
+
+       //mmedium tools
+
+        toolsBTN2 = craftingScreenUI.transform.Find("MediumToolsButton").GetComponent<Button>();
+        toolsBTN2.onClick.AddListener(delegate { OpenToolsCategory2(); });
+
+
+        toolsBTN2.onClick.AddListener(delegate { OpenToolsCategory2(); });
+
+        //algodao
+
+        LinhaReq1 = toolsScreenUI2.transform.Find("ThreadSpool").transform.Find("req1").GetComponent<Text>();
+        LinhaReq2 = toolsScreenUI2.transform.Find("ThreadSpool").transform.Find("req2").GetComponent<Text>();
+
+        craftLinhaBTN = toolsScreenUI2.transform.Find("ThreadSpool").transform.Find("Button").GetComponent<Button>();
+        craftLinhaBTN.onClick.AddListener(delegate { CraftAnyItem(LinhaBLP); });
+
+        //grade
+
+        GradeReq1 = toolsScreenUI2.transform.Find("BambooGrid").transform.Find("req1").GetComponent<Text>();
+        GradeReq2 = toolsScreenUI2.transform.Find("BambooGrid").transform.Find("req2").GetComponent<Text>();
+
+        craftGradeBTN = toolsScreenUI2.transform.Find("BambooGrid").transform.Find("Button").GetComponent<Button>();
+        craftGradeBTN.onClick.AddListener(delegate { CraftAnyItem(GradeBLP); });
+
+        //peneira
+
+        PeneiraReq1 = toolsScreenUI2.transform.Find("BambooSieve").transform.Find("req1").GetComponent<Text>();
+        PeneiraReq2 = toolsScreenUI2.transform.Find("BambooSieve").transform.Find("req2").GetComponent<Text>();
+
+        craftPeneiraBTN = toolsScreenUI2.transform.Find("BambooSieve").transform.Find("Button").GetComponent<Button>();
+        craftPeneiraBTN.onClick.AddListener(delegate { CraftAnyItem(PeneiraBLP); });
+
     }
 
+    //basic tools
     void OpenToolsCategory()
     {
         craftingScreenUI.SetActive(false);
         toolsScreenUI.SetActive(true);
+
+    }
+
+    //mediumtools
+    void OpenToolsCategory2()
+    {
+        craftingScreenUI.SetActive(false);
+        toolsScreenUI2.SetActive(true);
 
     }
 
@@ -141,7 +201,7 @@ public class CraftingSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && !isOpen)
         {
 
-            Debug.Log("i ta pressionado");
+            Debug.Log("c ta pressionado");
             craftingScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -154,6 +214,7 @@ public class CraftingSystem : MonoBehaviour
         {
             craftingScreenUI.SetActive(false);
             toolsScreenUI.SetActive(false);
+            toolsScreenUI2.SetActive(false);
 
             if (!InventorySystem.Instance.isOpen)
             {
@@ -167,6 +228,9 @@ public class CraftingSystem : MonoBehaviour
 
             isOpen = false;
         }
+       
+      
+
     }
     public void RefreshNeededItems()
     {
@@ -175,7 +239,12 @@ public class CraftingSystem : MonoBehaviour
         int stick_count = 0;
         int pwl_count = 0;
         int strongstone_count = 0;
+        int cotton_count = 0;
+        int bamboo_count = 0;
+        int thread_count = 0;
+        int grid_count = 0;
 
+        //st = Thread Spool
         //PWL = petrifield wooden log
 
         inventoryItemList = InventorySystem.Instance.itemList;
@@ -189,6 +258,7 @@ public class CraftingSystem : MonoBehaviour
                 case "Stone":
                     stone_count += 1;
                     break;
+
                 case "Stick":
                     stick_count += 1;
                     break;
@@ -201,6 +271,21 @@ public class CraftingSystem : MonoBehaviour
                     strongstone_count += 1;
                     break;
 
+                case "Cotton":
+                    cotton_count += 1;
+                    break;
+
+                case "Bamboo":
+                    bamboo_count += 1;
+                    break;
+
+                case "Thread Spool":
+                    thread_count += 1;
+                    break;
+
+                case "Bamboo Grid":
+                    grid_count += 1;
+                    break;
             }
 
 
@@ -237,6 +322,8 @@ public class CraftingSystem : MonoBehaviour
                 craftPickaxeBTN.gameObject.SetActive(false);
 
             }
+
+
             //-------Hammer--------//
             HammerReq1.text = "6 Strong Stone [" + strongstone_count + "]";
             HammerReq2.text = "4 Petrified Wood [" + pwl_count + "]";
@@ -255,26 +342,60 @@ public class CraftingSystem : MonoBehaviour
             }
 
 
+            //-------Cotton--------//
+            LinhaReq1.text = "6 Cotton [" + cotton_count + "]";
+            LinhaReq2.text = "1 Stick [" + stick_count + "]";
+
+            if (cotton_count >= 6 && stick_count >= 1)
+
+            {
+                craftLinhaBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftLinhaBTN.gameObject.SetActive(false);
+
+            }
+
+            //-------Grade--------//
+
+            GradeReq1.text = "5 Bamboos [" + bamboo_count + "]";
+            GradeReq2.text = "1 Thread Spool [" + thread_count + "]";
+
+            if (bamboo_count >= 5 && thread_count >= 1)
+
+            {
+                craftGradeBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftGradeBTN.gameObject.SetActive(false);
+
+            }
+
+            //-------peneira--------//
+
+            PeneiraReq1.text = "1 Bamboo Sieve [" + grid_count + "]";
+            PeneiraReq2.text = "1 Thread Spool [" + thread_count + "]";
+
+            if (grid_count >= 1 && thread_count >= 1)
+
+            {
+                craftPeneiraBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftPeneiraBTN.gameObject.SetActive(false);
+
+            }
 
 
         }
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
 }

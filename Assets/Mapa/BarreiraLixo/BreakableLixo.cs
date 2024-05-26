@@ -9,6 +9,8 @@ public class BreakableLixo : MonoBehaviour
     public bool playerInRange;
     public bool canBeBroken;
 
+    public Vector3 teleportPosition;
+
     public float trashMaxHealth;
     public float trashHealth;
 
@@ -22,31 +24,29 @@ public class BreakableLixo : MonoBehaviour
     public GameObject barreirainv1;
     public GameObject barreirainv2;
 
+    public GameObject waypoint2;
+
     private void Start()
     {
         trashHealth = trashMaxHealth;
         animator = transform.parent.transform.parent.GetComponent<Animator>();
 
-        if (aguaUm != null)
-        {
+        
             aguaUm.SetActive(false);
-        }
-        if (aguaDois != null)
-        {
+
             aguaDois.SetActive(true);
-        }
-        if (barreira != null)
-        {
+        
+        
             barreira.SetActive(true);
-        }
-        if (barreirainv1 != null)
-        {
-            barreira.SetActive(false);
-        }
-        if (barreirainv2 != null)
-        {
-            barreira.SetActive(false);
-        }
+
+
+        barreirainv1.SetActive(false);
+        barreirainv2.SetActive(false);
+        
+       
+
+            waypoint2.SetActive(false);
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -86,37 +86,41 @@ public class BreakableLixo : MonoBehaviour
     {
         Vector3 trashPosition = transform.position;
 
-        if (aguaUm != null)
-        {
+        
             aguaUm.SetActive(true);
-        }
 
-        if (aguaDois != null)
-        {
-            aguaDois.SetActive(false);
-        }
 
-        if (barreira != null)
-        {
+
+             Destroy(aguaDois);
+        
+
+        
             barreira.SetActive(false);
-        }
 
-        if (barreirainv1 != null)
-        {
-            barreira.SetActive(true);
-        }
-
-        if (barreirainv2 != null)
-        {
-            barreira.SetActive(true);
-        }
+             barreirainv1.SetActive(true);
+        barreirainv2.SetActive(true);
+           
+            
+            waypoint2.SetActive(true);
 
         Destroy(transform.parent.transform.parent.gameObject);
         canBeBroken = false;
         SelectionManager.Instance.selectedTrash = null;
         SelectionManager.Instance.hammerHolder.gameObject.SetActive(false);
 
-       
+        TeleportPlayer();
+
+
+    }
+
+    void TeleportPlayer()
+    {
+        // Verifica se o player existe antes de definir a posição
+        GameObject player = GameObject.FindWithTag("Player"); // Supondo que o player tenha a tag "Player"
+        if (player != null)
+        {
+            player.transform.position = teleportPosition;
+        }
     }
 
     private void Update()
