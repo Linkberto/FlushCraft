@@ -21,7 +21,7 @@ public class EquipablePickaxe : MonoBehaviour
             && CraftingSystem.Instance.isOpen == false &&
             SelectionManager.Instance.handIsVisible == false) // botao esquerdo
         {
-
+            SoundManager.Instance.PlaySound(SoundManager.Instance.swingFerr);
 
 
 

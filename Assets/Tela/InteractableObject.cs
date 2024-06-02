@@ -11,6 +11,8 @@ public class InteractableObject : MonoBehaviour
 
     public string ItemName;
 
+    public AudioSource pegaItem;
+
     public string GetItemName()
     {
         return ItemName;
@@ -26,8 +28,11 @@ public class InteractableObject : MonoBehaviour
             if (!InventorySystem.Instance.CheckIfFull())
             {
                 InventorySystem.Instance.AddToInventory(ItemName);
+                
 
                 Destroy(gameObject);
+                
+
             }
             //se tiver chei
             else

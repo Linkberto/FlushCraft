@@ -42,7 +42,7 @@ public class BreakableStone : MonoBehaviour
         //animator.SetTrigger("shake");
 
         stoneHealth -= 2;
-
+        SoundManager.Instance.PlaySound(SoundManager.Instance.pedraHit);
         if (stoneHealth <= 0)
         {
             StoneIsDead();

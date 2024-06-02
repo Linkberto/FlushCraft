@@ -26,6 +26,8 @@ public class BreakableLixo : MonoBehaviour
 
     public GameObject waypoint2;
 
+    public GameObject waypoint1;
+
     private void Start()
     {
         trashHealth = trashMaxHealth;
@@ -35,13 +37,14 @@ public class BreakableLixo : MonoBehaviour
             aguaUm.SetActive(false);
 
             aguaDois.SetActive(true);
-        
+            
+            waypoint1.SetActive(true);
         
             barreira.SetActive(true);
 
 
-        barreirainv1.SetActive(false);
-        barreirainv2.SetActive(false);
+            barreirainv1.SetActive(false);
+           barreirainv2.SetActive(false);
         
        
 
@@ -98,9 +101,9 @@ public class BreakableLixo : MonoBehaviour
             barreira.SetActive(false);
 
              barreirainv1.SetActive(true);
-        barreirainv2.SetActive(true);
-           
-            
+             barreirainv2.SetActive(true);
+
+            waypoint1.SetActive(false) ;
             waypoint2.SetActive(true);
 
         Destroy(transform.parent.transform.parent.gameObject);

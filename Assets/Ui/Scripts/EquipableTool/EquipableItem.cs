@@ -26,6 +26,7 @@ public class EquipableItem : MonoBehaviour
         {
 
 
+            SoundManager.Instance.PlaySound(SoundManager.Instance.swingFerr);
 
 
             animator.SetTrigger("hit");

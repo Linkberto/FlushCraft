@@ -80,6 +80,29 @@ public class SelectionManager : MonoBehaviour
 
             BreakableLixo breakableLixo = selectionTransform.GetComponent<BreakableLixo>();
 
+            //npc
+            NPC npc = selectionTransform.GetComponent<NPC>();
+
+            if (npc && npc.playerInRange)
+            {
+                interaction_text.text = "Talk";
+                interaction_Info_UI.SetActive(true);
+
+                if(Input.GetKeyDown("e")&& npc.isTalkingWithPlayer == false)
+                {
+                    npc.StartConversation();
+                }
+                if (DialogSystem.Instance.dialogUIActive)
+                {
+                    interaction_Info_UI.SetActive(false);
+                    centerDotImage.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                interaction_text.text = "";
+                interaction_Info_UI.SetActive(false);
+            }
 
             //arvore
             if (choppableTree && choppableTree.playerInRange)

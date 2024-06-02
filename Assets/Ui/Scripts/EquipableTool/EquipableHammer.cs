@@ -22,6 +22,7 @@ public class EquipableHammer : MonoBehaviour
             SelectionManager.Instance.handIsVisible == false) // botao esquerdo
         {
 
+            SoundManager.Instance.PlaySound(SoundManager.Instance.swingFerr);
 
 
             Debug.Log("animacao");

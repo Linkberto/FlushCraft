@@ -44,9 +44,9 @@ public class CraftingSystem : MonoBehaviour
 
     public Blueprint HammerBLP = new Blueprint("Hammer", 2, "Petrified Wood Log", 4, "Strong Stone", 6);
 
-    public Blueprint LinhaBLP = new Blueprint("Thread Spool", 2, "Cotton", 6, "Stick", 1);
+    public Blueprint LinhaBLP = new Blueprint("Thread Spool", 2, "Cotton", 2, "Stick", 1);
 
-    public Blueprint GradeBLP = new Blueprint("Bamboo Grid", 2, "Bamboos", 5, "Thread Spool", 1);
+    public Blueprint GradeBLP = new Blueprint("Bamboo Grid", 2, "Bamboo", 3, "Thread Spool", 1);
 
     public Blueprint PeneiraBLP = new Blueprint("Bamboo Sieve", 2, "Bamboo Grid", 1, "Thread Spool", 1);
 
@@ -208,6 +208,7 @@ public class CraftingSystem : MonoBehaviour
             SelectionManager.Instance.DisableSelection();
             SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
             isOpen = true;
+            SoundManager.Instance.PlaySound(SoundManager.Instance.inventSound);
 
         }
         else if (Input.GetKeyDown(KeyCode.C) && isOpen)
@@ -223,7 +224,7 @@ public class CraftingSystem : MonoBehaviour
 
                 SelectionManager.Instance.EnableSelection();
                 SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
-
+                SoundManager.Instance.PlaySound(SoundManager.Instance.inventSound);
             }
 
             isOpen = false;
@@ -343,10 +344,10 @@ public class CraftingSystem : MonoBehaviour
 
 
             //-------Cotton--------//
-            LinhaReq1.text = "6 Cotton [" + cotton_count + "]";
+            LinhaReq1.text = "2 Cotton [" + cotton_count + "]";
             LinhaReq2.text = "1 Stick [" + stick_count + "]";
 
-            if (cotton_count >= 6 && stick_count >= 1)
+            if (cotton_count >= 2 && stick_count >= 1)
 
             {
                 craftLinhaBTN.gameObject.SetActive(true);
@@ -361,10 +362,10 @@ public class CraftingSystem : MonoBehaviour
 
             //-------Grade--------//
 
-            GradeReq1.text = "5 Bamboos [" + bamboo_count + "]";
+            GradeReq1.text = "3 Bamboos [" + bamboo_count + "]";
             GradeReq2.text = "1 Thread Spool [" + thread_count + "]";
 
-            if (bamboo_count >= 5 && thread_count >= 1)
+            if (bamboo_count >= 3 && thread_count >= 1)
 
             {
                 craftGradeBTN.gameObject.SetActive(true);

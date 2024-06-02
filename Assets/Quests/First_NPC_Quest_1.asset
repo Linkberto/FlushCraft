@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d94eae224ada3449056fdc47cf1656, type: 3}
+  m_Name: First_NPC_Quest_1
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - "Hey traveler.\r"
+  - This is your second challenge.
+  - The trash coming from the barrier is coming straight here.
+  - Your mission is to prevent him from passing through here.
+  - 'A tip: Your craft table has a Bamboo Sieve.'
+  - You will need to do five of these to move on to the next stage.
+  - Remember, if you build Bamboo Sieve before accepting this challenge, you will
+    not be counted!
+  acceptOption: Okay, I'll help you.
+  acceptAnswer: Amazing, remember that helping the environment is cool!
+  declineOption: 'I don''t think so for now...
+
+    Maybe later.'
+  declineAnswer: Okay, if you're ready, you can come back here!
+  comebackAfterDecline: Is ready?
+  comebackInProgress: It looks like you haven't completed everything yet, complete
+    it and then come back here!
+  comebackCompleted: 'Right! Thank you very much!
+
+    You can now move on to the
+    next mission'
+  finalWords: Thank You!
+  firstRequirmentItem: Bamboo Sieve
+  firstRequirementAmount: 1
+  secondRequirmentItem: 
+  secondRequirementAmount: 0

@@ -84,7 +84,7 @@ public class InventorySystem : MonoBehaviour
             Cursor.visible = true;
             SelectionManager.Instance.DisableSelection();
             SelectionManager.Instance.GetComponent<SelectionManager>().enabled = false;
-
+            SoundManager.Instance.PlaySound(SoundManager.Instance.inventSound);
             isOpen = true;
 
         }
@@ -99,6 +99,7 @@ public class InventorySystem : MonoBehaviour
 
                 SelectionManager.Instance.EnableSelection();
                 SelectionManager.Instance.GetComponent<SelectionManager>().enabled = true;
+                SoundManager.Instance.PlaySound(SoundManager.Instance.inventSound);
             }
             isOpen = false;
         }

@@ -49,7 +49,7 @@ public class ChoppableTree : MonoBehaviour
         animator.SetTrigger("shake");
 
         treeHealth -= 2;
-
+        SoundManager.Instance.PlaySound(SoundManager.Instance.madeiraHit);
         if (treeHealth <= 0)
         {
             TreeIsDead();

@@ -8,6 +8,13 @@ public class SoundManager : MonoBehaviour
 
     //public AudioSource dropItemSound;
     public AudioSource grassWalkSound;
+    public AudioSource inventSound;
+    public AudioSource pedraHit;
+    public AudioSource madeiraHit;
+    public AudioSource swingFerr;
+
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,4 +35,7 @@ public class SoundManager : MonoBehaviour
             soundToPlay.Play();
         }
     }
+
+    
+
 }
