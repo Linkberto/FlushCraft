@@ -25,7 +25,30 @@ public class NPC : MonoBehaviour
     public int activeQuestIndex = 0;
     public bool firstTimeInteraction = true;
     public int currentDialog;
-     
+
+    //peneira
+    public GameObject penei1;
+    public GameObject penei2;
+    public GameObject penei3;
+    public GameObject penei4;
+    public GameObject penei5;
+
+    //lixo animacao
+
+    public GameObject animLixo1;
+    public GameObject animLixo2;
+    public GameObject animLixo3;
+    public GameObject animLixo4;
+    public GameObject animLixo5;
+
+    //barreiradiv
+
+    public GameObject barreiraLvtres;
+
+    //wapyoiny
+
+    public GameObject waypointlv2;
+    public GameObject waypointlv3;
 
     private void Start()
     {
@@ -36,6 +59,33 @@ public class NPC : MonoBehaviour
 
         optionButton2 = DialogSystem.Instance.option2BTN;
         optionButton2Text = DialogSystem.Instance.option2BTN.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+
+        //cano
+
+        penei1.SetActive(false);
+        penei2.SetActive(false);
+        penei3.SetActive(false);
+        penei4.SetActive(false);
+        penei5.SetActive(false);
+
+        //animlixof2
+
+        animLixo1.SetActive(true);
+        animLixo2.SetActive(true);
+        animLixo3.SetActive(true);
+        animLixo4.SetActive(true);
+        animLixo5.SetActive(true);
+
+        //barreiradivi
+
+        barreiraLvtres.SetActive(true);
+
+        //waypoint
+
+        
+        waypointlv3.SetActive(false);
+
+
     }
 
     public void StartConversation()
@@ -78,6 +128,24 @@ public class NPC : MonoBehaviour
                     {
                         ReceiveRewardAndCompleteQuest();
                     });
+
+                    penei1.SetActive(true);
+                    penei2.SetActive(true);
+                    penei3.SetActive(true);
+                    penei4.SetActive(true);
+                    penei5.SetActive(true);
+
+                    animLixo1.SetActive(false);
+                    animLixo2.SetActive(false);
+                    animLixo3.SetActive(false);
+                    animLixo4.SetActive(false);
+                    animLixo5.SetActive(false);
+
+                    barreiraLvtres.SetActive(false);
+
+                    waypointlv2.SetActive(false);
+                    waypointlv3.SetActive(true);
+
                 }
                 else
                 {

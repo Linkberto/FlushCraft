@@ -28,12 +28,16 @@ MonoBehaviour:
     Maybe later.'
   declineAnswer: Okay, if you're ready, you can come back here!
   comebackAfterDecline: Is ready?
-  comebackInProgress: It looks like you haven't completed everything yet, complete
+  comebackInProgress: 'It looks like you haven''t completed everything yet, complete
     it and then come back here!
+
+    Remember, you need 5 Bamboo Sieve!'
   comebackCompleted: 'Right! Thank you very much!
 
     You can now move on to the
-    next mission'
+    next mission
+
+'
   finalWords: Thank You!
   firstRequirmentItem: Bamboo Sieve
   firstRequirementAmount: 1

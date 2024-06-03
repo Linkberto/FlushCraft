@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dcc18321035073f49badbd94288cfd2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 570b8166e71da1747a2af39bcab88bda, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTrashable: 1
   thisName: Bamboo Sieve
-  thisDescription: 
-  thisFunctionality: 
+  thisDescription: A finely crafted bamboo sieve, legendary for its filtration abilities.
+  thisFunctionality: 'Legendary item. '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

@@ -116,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTrashable: 1
   thisName: Cotton
-  thisDescription: 
-  thisFunctionality: 
+  thisDescription: Soft and fluffy like cloud.
+  thisFunctionality: 'It can be used for crafts. '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

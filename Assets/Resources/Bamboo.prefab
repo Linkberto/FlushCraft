@@ -116,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTrashable: 1
   thisName: Bamboo
-  thisDescription: 
-  thisFunctionality: 
+  thisDescription: And bamboo?
+  thisFunctionality: 'It can be used for crafts. '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

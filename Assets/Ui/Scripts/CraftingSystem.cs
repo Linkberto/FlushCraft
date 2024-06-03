@@ -8,7 +8,7 @@ public class CraftingSystem : MonoBehaviour
     public GameObject craftingScreenUI;
     public GameObject toolsScreenUI;
     public GameObject toolsScreenUI2;
-
+    public GameObject toolsScreenUI3;
 
     public List<string> inventoryItemList = new List<string>();
 
@@ -17,23 +17,35 @@ public class CraftingSystem : MonoBehaviour
 
     Button toolsBTN;
     Button toolsBTN2;
+    Button toolsBTN3;
 
     //botoes de craftar
     Button craftAxeBTN;
     Button craftPickaxeBTN;
     Button craftHammerBTN;
+
     Button craftGradeBTN;
     Button craftLinhaBTN;
     Button craftPeneiraBTN;
+
+    Button craftCarvAlBTN;
+    Button craftGraFinBTN;
+    Button craftFilterBTN;
+
 
 
     //requerimentos texto
     Text AxeReq1, AxeReq2;
     Text PickaxeReq1, PickaxeReq2;
     Text HammerReq1, HammerReq2;
+
     Text LinhaReq1, LinhaReq2;
     Text GradeReq1, GradeReq2;
     Text PeneiraReq1, PeneiraReq2;
+
+    Text CarvAlReq1, CarvAlReq2;
+    Text GraFinReq1, GraFinReq2;
+    Text FilterReq1, FilterReq2;
 
     public bool isOpen;
 
@@ -44,12 +56,20 @@ public class CraftingSystem : MonoBehaviour
 
     public Blueprint HammerBLP = new Blueprint("Hammer", 2, "Petrified Wood Log", 4, "Strong Stone", 6);
 
+
+
     public Blueprint LinhaBLP = new Blueprint("Thread Spool", 2, "Cotton", 2, "Stick", 1);
 
     public Blueprint GradeBLP = new Blueprint("Bamboo Grid", 2, "Bamboo", 3, "Thread Spool", 1);
 
     public Blueprint PeneiraBLP = new Blueprint("Bamboo Sieve", 2, "Bamboo Grid", 1, "Thread Spool", 1);
 
+
+    public Blueprint CarvAlBLP = new Blueprint("Charcoal and Cotton", 2, "Petrified Wood Log", 8, "Cotton", 8);
+
+    public Blueprint GraFinBLP = new Blueprint("Gravel and Fine Sand", 2, "Gravel", 6, "Sand", 5);
+
+    public Blueprint FilterBLP = new Blueprint("Cleaning Filter", 2, "Charcoal and Cotton", 1, "Gravel and Fine Sand", 1);
 
 
 
@@ -102,7 +122,7 @@ public class CraftingSystem : MonoBehaviour
 
 
 
-       //mmedium tools
+       //medium tools
 
         toolsBTN2 = craftingScreenUI.transform.Find("MediumToolsButton").GetComponent<Button>();
         toolsBTN2.onClick.AddListener(delegate { OpenToolsCategory2(); });
@@ -134,6 +154,36 @@ public class CraftingSystem : MonoBehaviour
         craftPeneiraBTN = toolsScreenUI2.transform.Find("BambooSieve").transform.Find("Button").GetComponent<Button>();
         craftPeneiraBTN.onClick.AddListener(delegate { CraftAnyItem(PeneiraBLP); });
 
+
+        //advanced tools
+        toolsBTN3 = craftingScreenUI.transform.Find("AdvancedToolsButton").GetComponent<Button>();
+        toolsBTN3.onClick.AddListener(delegate { OpenToolsCategory3(); });
+
+        //Charcoal
+
+        CarvAlReq1 = toolsScreenUI3.transform.Find("CharcoalandCotton").transform.Find("req1").GetComponent<Text>();
+        CarvAlReq2 = toolsScreenUI3.transform.Find("CharcoalandCotton").transform.Find("req2").GetComponent<Text>();
+
+        craftCarvAlBTN = toolsScreenUI3.transform.Find("CharcoalandCotton").transform.Find("Button").GetComponent<Button>();
+        craftCarvAlBTN.onClick.AddListener(delegate { CraftAnyItem(CarvAlBLP); });
+
+        //gravel
+
+        GraFinReq1 = toolsScreenUI3.transform.Find("GravelandFineSand").transform.Find("req1").GetComponent<Text>();
+        GraFinReq2 = toolsScreenUI3.transform.Find("GravelandFineSand").transform.Find("req2").GetComponent<Text>();
+
+        craftGraFinBTN = toolsScreenUI3.transform.Find("GravelandFineSand").transform.Find("Button").GetComponent<Button>();
+        craftGraFinBTN.onClick.AddListener(delegate { CraftAnyItem(GraFinBLP); });
+
+        //filter
+
+        FilterReq1 = toolsScreenUI3.transform.Find("CleaningFilter").transform.Find("req1").GetComponent<Text>();
+        FilterReq2 = toolsScreenUI3.transform.Find("CleaningFilter").transform.Find("req2").GetComponent<Text>();
+
+        craftFilterBTN = toolsScreenUI3.transform.Find("CleaningFilter").transform.Find("Button").GetComponent<Button>();
+        craftFilterBTN.onClick.AddListener(delegate { CraftAnyItem(FilterBLP); });
+
+
     }
 
     //basic tools
@@ -149,6 +199,14 @@ public class CraftingSystem : MonoBehaviour
     {
         craftingScreenUI.SetActive(false);
         toolsScreenUI2.SetActive(true);
+
+    }
+
+    //advanced tools
+    void OpenToolsCategory3()
+    {
+        craftingScreenUI.SetActive(false);
+        toolsScreenUI3.SetActive(true);
 
     }
 
@@ -216,6 +274,7 @@ public class CraftingSystem : MonoBehaviour
             craftingScreenUI.SetActive(false);
             toolsScreenUI.SetActive(false);
             toolsScreenUI2.SetActive(false);
+            toolsScreenUI3.SetActive(false);
 
             if (!InventorySystem.Instance.isOpen)
             {
@@ -244,6 +303,10 @@ public class CraftingSystem : MonoBehaviour
         int bamboo_count = 0;
         int thread_count = 0;
         int grid_count = 0;
+        int gravel_count = 0;
+        int sand_count = 0;
+        int chaCo_count = 0;
+        int graFi_count = 0;
 
         //st = Thread Spool
         //PWL = petrifield wooden log
@@ -286,6 +349,22 @@ public class CraftingSystem : MonoBehaviour
 
                 case "Bamboo Grid":
                     grid_count += 1;
+                    break;
+
+                case "Gravel":
+                    gravel_count += 1;
+                    break;
+
+                case "Sand":
+                    sand_count += 1;
+                    break;
+
+                case "Charcoal and Cotton":
+                    chaCo_count += 1;
+                    break;
+
+                case "Gravel and Fine Sand":
+                    graFi_count += 1;
                     break;
             }
 
@@ -396,6 +475,58 @@ public class CraftingSystem : MonoBehaviour
 
             }
 
+            //-------Charcoal and Cotton--------//
+
+            CarvAlReq1.text = "8 Petrified Wood [" + pwl_count + "]";
+            CarvAlReq2.text = "8 Cottons [" + cotton_count + "]";
+
+            if (pwl_count >= 8 && cotton_count >= 8)
+
+            {
+                craftCarvAlBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftCarvAlBTN.gameObject.SetActive(false);
+
+            }
+
+            //-------Gravel and Fine Sand--------//
+
+            GraFinReq1.text = "6 Gravels [" + gravel_count + "]";
+            GraFinReq2.text = "5 Sands [" + sand_count + "]";
+
+            if (gravel_count >= 6 && sand_count >= 5)
+
+            {
+                craftGraFinBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftGraFinBTN.gameObject.SetActive(false);
+
+            }
+            //-------Filter--------//
+
+            FilterReq1.text = "1 Charcoal and Cotton [" + chaCo_count + "]";
+            FilterReq2.text = "1 Gravel and Fine Sand [" + graFi_count + "]";
+
+            if (chaCo_count >= 1 && graFi_count >= 1)
+
+            {
+                craftFilterBTN.gameObject.SetActive(true);
+            }
+
+            else
+            {
+
+                craftFilterBTN.gameObject.SetActive(false);
+
+            }
 
         }
     }

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: 0
   ItemName: Cotton
+  pegaItem: {fileID: 0}
 --- !u!65 &920400818986439964
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,8 +121,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.16, y: 2.06, z: 0.01}
-  m_Center: {x: -2.7, y: -2.36, z: -9.77}
+  m_Size: {x: 1.5485016, y: 1.0507283, z: 7.1411715}
+  m_Center: {x: -2.2413757, y: -2.2576888, z: -6.2044096}
 --- !u!65 &5589338559896846062
 BoxCollider:
   m_ObjectHideFlags: 0

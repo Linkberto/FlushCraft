@@ -117,7 +117,7 @@ MonoBehaviour:
   isTrashable: 1
   thisName: Bamboo Grid
   thisDescription: 
-  thisFunctionality: 
+  thisFunctionality: 'It can be used for crafts. '
   isEquippable: 0
   isInsideQuickSlot: 0
   isSelected: 0

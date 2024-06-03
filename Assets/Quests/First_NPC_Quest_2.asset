@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d94eae224ada3449056fdc47cf1656, type: 3}
+  m_Name: First_NPC_Quest_2
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - "Hello again traveler,\r"
+  - This is your third challenge.
+  - Now that the trash has been stopped from passing through.
+  - We have to clean the water.
+  - Your mission now is to create a filter that cleans water.
+  - 'A tip: your craft table has a Cleaning Filter!'
+  - You only need to do one to complete your work here.
+  - Remember, if you create the Cleaning Filter before accepting the mission, you
+    will not be counted!
+  - Remember, helping the environment is cool!
+  acceptOption: Okay, I'll do my best
+  acceptAnswer: Fantastic, remember that you make the difference!
+  declineOption: 'Not yet, I''ll explore more...
+
+    Maybe later!'
+  declineAnswer: Okay, come when you want to end your journey!
+  comebackAfterDecline: Is ready?
+  comebackInProgress: It looks like you don't have everything you need to assemble
+    a Cleaning Filter, come back when it's ready!
+  comebackCompleted: Ready! Thank you very much, this river is certainly not the
+    same anymore, thanks to you, it is much better!
+  finalWords: I think you have to move on to new adventures!
+  firstRequirmentItem: Cleaning Filter
+  firstRequirementAmount: 1
+  secondRequirmentItem: 
+  secondRequirementAmount: 0

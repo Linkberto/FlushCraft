@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.03165298
+      value: 0.031652983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalScale.y
@@ -18,35 +18,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.03165298
+      value: 0.031652983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 93.90546
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 62.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 358.78217
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9953488
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.096336566
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 11.057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -71,6 +71,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6566494711122891801}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8797126931224087680}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3231650261287235450}
   m_SourcePrefab: {fileID: 100100000, guid: 91713cdfb5c83fb488791ccd83b34324, type: 3}
 --- !u!1 &1037385399011038861 stripped
 GameObject:
@@ -98,3 +104,72 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.6556873, y: 78.31511, z: 12.933818}
   m_Center: {x: 0.07095451, y: 38.657516, z: 0.46320736}
+--- !u!65 &8797126931224087680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037385399011038861}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 132.9, y: 115, z: 132.9}
+  m_Center: {x: 0.07095451, y: 38.65752, z: 0.4632074}
+--- !u!114 &3231650261287235450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037385399011038861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aa3801aeb85d76469e7b7cc808f7e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRange: 0
+  isTalkingWithPlayer: 0
+  quests:
+  - questName: The Pipe
+    questDescription: Help stop trash from spreading.
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 30fb000ea22b09d4cab6f4dbd640516a, type: 2}
+  currentActiveQuest:
+    questName: 
+    questDescription: 
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 0}
+  activeQuestIndex: 0
+  firstTimeInteraction: 1
+  currentDialog: 0
+  penei1: {fileID: 0}
+  penei2: {fileID: 0}
+  penei3: {fileID: 0}
+  penei4: {fileID: 0}
+  penei5: {fileID: 0}
+  animLixo1: {fileID: 0}
+  animLixo2: {fileID: 0}
+  animLixo3: {fileID: 0}
+  animLixo4: {fileID: 0}
+  animLixo5: {fileID: 0}
+  barreiraLvtres: {fileID: 0}
+  waypointlv2: {fileID: 0}
+  waypointlv3: {fileID: 0}
