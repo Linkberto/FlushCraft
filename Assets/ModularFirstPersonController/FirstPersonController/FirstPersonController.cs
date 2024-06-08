@@ -469,7 +469,6 @@ public class FirstPersonController : MonoBehaviour
             isMoving = true;
             
 
-            SoundManager.Instance.PlaySound(SoundManager.Instance.grassWalkSound);
 
 
         }
@@ -477,7 +476,6 @@ public class FirstPersonController : MonoBehaviour
         {
             isMoving = false;
 
-            SoundManager.Instance.grassWalkSound.Stop();
         }
     }
 

@@ -34,7 +34,10 @@ MonoBehaviour:
     a Cleaning Filter, come back when it's ready!
   comebackCompleted: Ready! Thank you very much, this river is certainly not the
     same anymore, thanks to you, it is much better!
-  finalWords: I think you have to move on to new adventures!
+  finalWords: 'I think you have to move on to new adventures!
+
+    Now you can explore
+    the map at will'
   firstRequirmentItem: Cleaning Filter
   firstRequirementAmount: 1
   secondRequirmentItem: 

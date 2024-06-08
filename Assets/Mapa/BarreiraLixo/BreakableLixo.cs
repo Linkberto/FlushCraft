@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [RequireComponent(typeof(BoxCollider))]
 public class BreakableLixo : MonoBehaviour
@@ -28,6 +29,11 @@ public class BreakableLixo : MonoBehaviour
 
     public GameObject waypoint1;
 
+    //viodeo
+    public GameObject videoPlayer; 
+    public float videoDuration = 12f;
+
+    public GameObject telaVideo;
     private void Start()
     {
         trashHealth = trashMaxHealth;
@@ -45,11 +51,14 @@ public class BreakableLixo : MonoBehaviour
 
             barreirainv1.SetActive(false);
            barreirainv2.SetActive(false);
-        
-       
 
+
+           
             waypoint2.SetActive(false);
-        
+
+            telaVideo.SetActive(false);
+            videoPlayer.SetActive(false);
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -75,10 +84,13 @@ public class BreakableLixo : MonoBehaviour
 
         trashHealth -= 2;
         Debug.Log("deu dano");
-
+        SoundManager.Instance.PlaySound(SoundManager.Instance.marteloHit);
         if (trashHealth <= 0)
         {
             TrashIsDead();
+          //  telaVideo.SetActive(true);
+           // videoPlayer.SetActive(true);
+           // StartCoroutine(StopVideoAfterTime(videoDuration));
         }
 
     }
@@ -98,7 +110,7 @@ public class BreakableLixo : MonoBehaviour
         
 
         
-            barreira.SetActive(false);
+             barreira.SetActive(false);
 
              barreirainv1.SetActive(true);
              barreirainv2.SetActive(true);
@@ -110,9 +122,9 @@ public class BreakableLixo : MonoBehaviour
         canBeBroken = false;
         SelectionManager.Instance.selectedTrash = null;
         SelectionManager.Instance.hammerHolder.gameObject.SetActive(false);
-
         TeleportPlayer();
 
+        
 
     }
 
@@ -133,6 +145,14 @@ public class BreakableLixo : MonoBehaviour
             GlobalState.Instance.resourceHealth = trashHealth;
             GlobalState.Instance.resourceMaxHealth = trashMaxHealth;
         }
+    }
+    private IEnumerator StopVideoAfterTime(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        
+        videoPlayer.SetActive(false); 
+           
+        
     }
 
 }

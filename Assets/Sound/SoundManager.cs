@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource pedraHit;
     public AudioSource madeiraHit;
     public AudioSource swingFerr;
+    public AudioSource marteloHit;
 
 
 
